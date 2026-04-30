@@ -1,0 +1,17 @@
+[project]
+name = "python-olaf-driver"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy",
+    "python-can",
+    "onnxruntime",
+    "pyyaml>=6.0.3",
+    "damiao-motor>=1.0.6",
+    "pygame>=2.6.1",
+    "pyserial>=3.5",
+    "tqdm>=4.67.3",
+    "colorama>=0.4.6",
+]
