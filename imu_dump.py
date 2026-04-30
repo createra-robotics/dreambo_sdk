@@ -22,7 +22,7 @@ Two views per tick:
 Usage:
     python imu_dump.py                 # default port + baud, 5 Hz print
     python imu_dump.py --rate 10
-    python imu_dump.py --port /dev/ttyUSB0 --bps 921600
+    python imu_dump.py --port /dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0 --bps 921600
 """
 from __future__ import annotations
 
@@ -46,22 +46,13 @@ def _format_vec(v: np.ndarray) -> str:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(
-        description="Verify IMU mounting against base_link without the joystick. "
-                    "Prints the same ang_vel / proj_g / yaw that run.py IDLE shows."
-    )
-    parser.add_argument("--port", default=DEFAULT_PORT,
-                        help=f"Serial port (default: {DEFAULT_PORT})")
-    parser.add_argument("--bps", type=int, default=DEFAULT_BAUD,
-                        help=f"Baud rate (default: {DEFAULT_BAUD})")
-    parser.add_argument("--rate", type=float, default=5.0,
-                        help="Print rate in Hz (default: 5.0)")
-    parser.add_argument("--no-raw", action="store_true",
-                        help="Suppress the raw-chip diagnostic line")
+    parser = argparse.ArgumentParser(description="Verify IMU mounting against base_link without the joystick. Prints the same ang_vel / proj_g / yaw that run.py IDLE shows.")
+    parser.add_argument("--port", default=DEFAULT_PORT, help=f"Serial port (default: {DEFAULT_PORT})")
+    parser.add_argument("--bps", type=int, default=DEFAULT_BAUD, help=f"Baud rate (default: {DEFAULT_BAUD})")
+    parser.add_argument("--rate", type=float, default=5.0, help="Print rate in Hz (default: 5.0)")
+    parser.add_argument("--no-raw", action="store_true", help="Suppress the raw-chip diagnostic line")
     args = parser.parse_args()
-
-    logging.basicConfig(level=logging.WARNING,
-                        format="%(asctime)s %(levelname)s %(name)s: %(message)s")
+    logging.basicConfig(level=logging.WARNING, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 
     print("=" * 80)
     print(f"Port      : {args.port}")
