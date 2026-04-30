@@ -1,4 +1,4 @@
-# OLAF Raspberry Pi Runtime Driver
+# Dreambo SDK Runtime
 
 Skeleton for deploying a skrl-trained walking policy to a physical OLAF via a USB-CAN adapter at 1 Mbps.
 
