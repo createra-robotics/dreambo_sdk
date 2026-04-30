@@ -26,16 +26,16 @@
 
 ## 1. 项目简介
 
-| 模块             | 作用                                                                 |
-|------------------|----------------------------------------------------------------------|
-| `config.py`      | 关节顺序、默认姿态、电机型号、CAN ID、关节限位、回路频率等所有常量   |
-| `can_bus.py`     | 基于 `python-can` 的 SocketCAN 薄封装                                |
-| `motors.py`      | Robstride RS00 / RS02 / RS03 与达妙 DM-J43xx MIT 模式驱动            |
-| `imu.py`         | HI226 / HI229 串口 AHRS 模块解析（独立线程）                          |
-| `observation.py` | 观测向量拼装 + path-frame 跟踪器                                     |
-| `policy.py`      | ONNX 策略推理 + RunningStandardScaler 复现                           |
-| `joystick.py`    | Xbox One S 手柄驱动（pygame / SDL）                                  |
-| `run.py`         | 主入口：50 Hz 策略循环 + 200 Hz 电机循环 + 状态机                    |
+| 模块             | 作用                                                 |
+|------------------|----------------------------------------------------|
+| `config.py`      | 关节顺序、默认姿态、电机型号、CAN ID、关节限位、回路频率等所有常量               |
+| `can_bus.py`     | 基于 `python-can` 的 SocketCAN 薄封装                    |
+| `motors.py`      | Robstride RS00 / RS02 / RS03 与达妙 DM-J43xx MIT 模式驱动 |
+| `imu.py`         | N100 串口 AHRS 模块解析（独立线程）                            |
+| `observation.py` | 观测向量拼装 + path-frame 跟踪器                            |
+| `policy.py`      | ONNX 策略推理 + RunningStandardScaler 复现               |
+| `joystick.py`    | Xbox One S 手柄驱动（pygame / SDL）                      |
+| `run.py`         | 主入口：50 Hz 策略循环 + 200 Hz 电机循环 + 状态机                 |
 
 **控制频率：**
 - 策略：`POLICY_HZ = 50`
