@@ -92,8 +92,8 @@ uv --version
 ## 4. 拉取与依赖安装
 
 ```bash
-git clone <仓库地址> python_olaf_sdk
-cd python_olaf_sdk
+git clone https://github.com/createra-robotics/dreambo_sdk
+cd dreambo_sdk
 
 # 一行同步：创建 .venv，按 uv.lock 安装全部依赖
 uv sync
