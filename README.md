@@ -425,7 +425,7 @@ SDK 内置多层安全网，但**机械急停永远是最后一道防线**：
 ## 13. 文件结构速查
 
 ```text
-python_olaf_sdk/
+dreambo_sdk/
 ├── run.py              # 主入口（状态机、策略循环、电机循环）
 ├── config.py           # 关节顺序、默认姿态、CAN ID、限位、回路频率
 ├── motors.py           # Robstride / 达妙 MIT 模式驱动
